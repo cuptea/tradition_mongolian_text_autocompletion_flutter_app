@@ -46,10 +46,10 @@ class _MyAppState extends State<MyApp> {
     super.initState();
     // setup configuration variables
     _blockSize = 20;
-    _numberOfSampleWords = 50;
+    _numberOfSampleWords = 10;
     _maxLengthOfWord = 20;
 
-    _controller = new TextEditingController(text: 'ᡥᡭᡬᡴᡭᢝ ');
+    _controller = new TextEditingController(text: 'ᢌᡪᡱᡱᡭᢙᡪᡫ ᡥᡪᢑᡪᡪᡪᢙᡪᡪᡪᢔᡪᡧ ᢜᡪᢐᡨ ᢈᡭᢜᡭᡪᡪᢔᡪᡧ ᡳ ᢋᡭᡬᢔᡪᢊᢔᡪᢊᡪᢝ ᢌᡬᡱᡳ ᡸᡪᡬᡬᢝᡨ');
     // ignore: deprecated_member_use
     _prediction = new Set<String>();
 
@@ -150,7 +150,7 @@ class _MyAppState extends State<MyApp> {
         }
         // otherwise, grow the word by one char again
         else {
-          xMultipleNew.add(new List.from(xMultiple[m]));
+          xMultipleNew.add(new List.from( xMultiple[m].sublist(xMultiple[m].length - _blockSize,xMultiple[m].length)));
         }
       }
 
